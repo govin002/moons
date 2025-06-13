@@ -356,7 +356,7 @@ body.transitioned .top-right-content {
 /* === Moon Image === */
 .moon {
   position: absolute;
-  top: 1;
+  top: -1;
   left: 10%;
   width: 50%;
   height: auto;
