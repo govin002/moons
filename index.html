@@ -784,70 +784,7 @@
    </div>
    
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://assets.codepen.io/16327/SplitText3.min.js"></script>
-    <script>
-      gsap.registerPlugin(ScrollTrigger);
-
-      gsap.to(".text-about p", {
-        backgroundPositionX: "0%",
-        stagger: 0.3,
-        scrollTrigger: {
-          trigger: ".about-text",
-          markers: true,
-          scrub: 1,
-          start: "20 center",
-          end: "bottom center",
-        },
-      });
-    </script>
-    <script>
-      gsap.to(".section-subtitle", {
-        backgroundPositionX: "0%",
-        scrollTrigger: {
-          trigger: ".section-subtitle",
-          markers: true, // optional: for debugging
-          scrub: 0.1,
-          start: "40 center",
-          end: "bottom center",
-        },
-      });
-    </script>
-
-    <script>
-      gsap.to(".value-content", {
-        backgroundPositionX: "0%",
-        scrollTrigger: {
-          trigger: "value-content",
-          markers: true, // remove when done debugging
-          scrub: 1,
-          start: "40 center",
-          end: " bottom center ",
-        },
-      });
-    </script>
-
-    <!-- sweet alert  -->
-     <script>
-  document.getElementById("contactForm").addEventListener("submit", function (e) {
-    e.preventDefault(); // prevent default form submission
-
-    // You can add form validation or sending logic here
-
-    // Show SweetAlert2
-   Swal.fire({
-  position: "top-end",
-  icon: "success",
-  title: "Your Mail has been Submitted",
-  showConfirmButton: false,
-  timer: 1500
-});
-
-    // Optionally reset the form:
-    this.reset();
-  });
-</script>
+  
     <script src="scrollct.js"></script>
     <script src="caardsuf.js"></script>
     <script src="brandcard.js"></script>
