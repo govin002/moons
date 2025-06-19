@@ -25,16 +25,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Mobile: simulate hover using touchstart
-    card.addEventListener("touchstart", (e) => {
-      if (window.innerWidth < 768) {
-        // Prevent double firing
-        e.stopPropagation();
+    card.addEventListener(
+      "touchstart",
+      (e) => {
+        if (window.innerWidth < 768) {
+          // Prevent double firing
+          e.stopPropagation();
 
-        popupTitle.textContent = card.dataset.title;
-        popupDesc.textContent = card.dataset.desc;
-        popup.style.display = "block";
-      }
-    });
+          popupTitle.textContent = card.dataset.title;
+          popupDesc.textContent = card.dataset.desc;
+          popup.style.display = "block";
+        }
+      },
+      { passive: true }
+    );
   });
 
   // Close popup on touch anywhere outside
