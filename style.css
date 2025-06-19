@@ -21,7 +21,7 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   scrollbar-width: none;
-  background: url(assets/images/Bgi.png);
+  background: url(assets/images/bg.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -472,7 +472,7 @@ body.transitioned .top-right-content {
 
 /* === CARD === */
 .info-card {
-  width: 450px;
+  width: 400px;
   height: 400px;
   background-color: #1b1b1b80;
   border: 0.5px solid #4e4e4e;
@@ -537,8 +537,6 @@ body.transitioned .top-right-content {
 }
 
 .card-hover-content h3 {
-   font-family: "Audiowide", sans-serif;
-  font-weight: 400;
   font-size: 4rem;
   margin-bottom: 0.5rem;
 }
@@ -1426,7 +1424,7 @@ body.transitioned .top-right-content {
 @media (max-width: 675px) {
   body {
     font-family: "Audiowide", sans-serif;
-    background: url(assets/images/Bgi.png) no-repeat;
+    background: url(assets/images/bg.png) no-repeat;
     background-size: cover;
     color: #fff;
     line-height: 1.6;
@@ -1441,18 +1439,12 @@ body.transitioned .top-right-content {
     transform: none;
     position: absolute;
   }
+  .video-section {
+    z-index: 2;
+  }
 
   .nav-links {
     display: none;
-  }
-
-  .nav-links a {
-    font-family: "Space Grotesk", sans-serif;
-    color: white;
-    text-decoration: none;
-    padding: 8px 10px;
-    transition: color 0.3s ease;
-    font-size: 0.4rem;
   }
 
   .mobile-menu-overlay {
@@ -1461,7 +1453,9 @@ body.transitioned .top-right-content {
     transition: opacity 0.3s ease, visibility 0.3s ease;
     width: 100%;
     left: 0;
+    top: -10;
     height: 100vh;
+    z-index: 10;
   }
 
   .mobile-menu-overlay.hidden {
@@ -1891,12 +1885,13 @@ body.transitioned .top-right-content {
   }
 
   .brand-card-grid {
-    grid-template-columns: repeat(3, 80px);
+    grid-template-columns: repeat(3, 12vw);
   }
 
   .brand-card {
     width: 80px;
     height: 60px;
+    margin: 0 1rem;
   }
 
   .brand-card-description {
