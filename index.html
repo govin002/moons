@@ -22,7 +22,7 @@
 
     <title>Silver Moon Studio</title>
   </head>
-  
+   
   <body class="no-scroll">
 
     <!-- section one  -->
@@ -132,9 +132,10 @@
               <div class="gradient-line-vertical vertical-line"></div>
               <!-- about section -->
               <div class="about-text">
-                <h2>About US</h2>
-
-                <div class="text-about">
+              
+                  <h2 class="hh2">About US</h2>
+                
+                 <div class="text-about">
                   <p>
                     Born from the dust of creativity and forged in the nebulae
                     of innovation, We are creative & multimedia studio based in
@@ -169,6 +170,7 @@
                     time.
                   </p>
                 </div>
+                
               </div>
             </div>
           </div>   
@@ -757,13 +759,16 @@
                  </div>
               </div>
               <div class="contact-right">
-                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                <form class="contact-form" id="contactForm">
-                  <input type="text" placeholder="Name" required />
-                 <input type="email" placeholder="Email ID" required />
-                 <textarea placeholder="Message" required></textarea>
-                 <button type="submit">Submit</button>
-                </form>
+                <!-- SweetAlert2 CDN -->
+       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+               <!-- Your Form -->
+      <form class="contact-form" id="contactForm">
+      <input type="text" placeholder="Name" required />
+     <input type="email" placeholder="Email ID" required />
+    <textarea placeholder="Message" required></textarea>
+     <button type="submit">Submit</button>
+    </form>
+
               </div>
             </div>
            
@@ -783,16 +788,43 @@
     <!-- section nine ends -->
    </div>
    
+<!-- Toast Style -->
 
-  
+    <!-- sweet alert  -->
+     <script>
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // prevent default form submission
+
+    // You can add form validation or sending logic here
+
+    // Show SweetAlert2
+   Swal.fire({
+  position: "top-end",
+  icon: "success",
+  title: "Your Mail has been Submitted",
+  showConfirmButton: false,
+  timer: 1500
+});
+
+    // Optionally reset the form:
+    this.reset();
+  });
+</script>
+<script>
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js">
+   
+   </script> 
     <script src="scrollct.js"></script>
     <script src="caardsuf.js"></script>
     <script src="brandcard.js"></script>
+    <script src="ienis.js"></script>
     <script src="script.js"></script>
-      
-     <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js">
-       // Initialize Lenis
-  <script src="ienis.js"></script>
-     </script> 
   </body>
 </html>
