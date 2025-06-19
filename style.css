@@ -21,7 +21,7 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   scrollbar-width: none;
-  background: url(assets/images/bg.png);
+  background: url(assets/images/Bgi.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -1424,7 +1424,7 @@ body.transitioned .top-right-content {
 @media (max-width: 675px) {
   body {
     font-family: "Audiowide", sans-serif;
-    background: url(assets/images/bg.png) no-repeat;
+    background: url(assets/images/Bgi.png) no-repeat;
     background-size: cover;
     color: #fff;
     line-height: 1.6;
