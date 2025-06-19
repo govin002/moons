@@ -1885,7 +1885,7 @@ body.transitioned .top-right-content {
   }
 
   .brand-card-grid {
-    grid-template-columns: repeat(3, 12vw);
+    grid-template-columns: repeat(3, 14vw);
   }
 
   .brand-card {
