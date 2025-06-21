@@ -636,7 +636,7 @@ body.transitioned .top-right-content {
   padding: 25px;
   color: white;
   transition: all 0.4s ease;
-  max-height: 260px;
+  max-height: 300px;
   cursor: pointer;
   z-index: 1;
 }
