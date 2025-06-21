@@ -1702,10 +1702,12 @@ body.transitioned .top-right-content {
     text-align: left; /* better readability for mobile */
   }
 
-  .moon-image {
+ .moon-image {
     transform: translate(-50%, -50%) scale(1.1);
-    top: 30%; 
-    left: 54%;
+    padding: 1rem 1rem;
+    display: block;
+    align-items: center;
+    justify-content: center;
     opacity: 0.3;
     max-height: 50vh;
   }
