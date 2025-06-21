@@ -175,13 +175,13 @@ body.transitioned .top-right-content {
   top: 2rem;
   right: 8rem;
   display: none;
-  gap: 10px;
+  gap: 0.625rem;
   z-index: 2;
 }
 
 .nav-links {
   display: flex;
-  gap: 16px;
+  gap: 1rem;
   align-items: center;
   font-size: 1rem;
 }
@@ -202,10 +202,10 @@ body.transitioned .top-right-content {
 .btn {
   font-family: "Space Grotesk", sans-serif;
   background-color: #fb1cbe;
-  padding: 8px 14px;
+  padding: 0.5rem 0.875rem;
   border-radius: 6px;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 1.5rem;
   color: white;
 }
 
@@ -380,7 +380,7 @@ body.transitioned .top-right-content {
 /* === Text Styles === */
 .about-text h2 {
   font-family: "Audiowide", sans-serif;
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 400;
   margin-bottom: 1rem;
   margin-left: 1rem;
@@ -388,16 +388,39 @@ body.transitioned .top-right-content {
 
 .text-about {
   font-family: "Space Grotesk", sans-serif;
-  font-size: 1rem;
   line-height: 160%;
   color: #ccc;
   margin-left: 1rem;
 }
 
-.text-about p {
+.text-about > p {
   max-width: 800px;
-  margin-bottom: 1rem;
+  background: linear-gradient(to right, #fff 50%, #252525 50%);
+  background-size: 200% 100%;
+  background-position-x: 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  line-height: 1.4;
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
 }
+
+.line-reveal {
+  display: block;
+  background: linear-gradient(to right, #fff 50%, #252525 50%);
+  background-size: 200% 100%;
+  background-position-x: 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* .text-about p {
+
+  margin-bottom: 1rem;
+} */
 /* ---------------section  Three -------------------------*/
 
 .section-three {
@@ -451,14 +474,15 @@ body.transitioned .top-right-content {
   font-weight: 400;
   text-align: center;
   color: transparent;
-  line-height: 160%;
-
-  background: linear-gradient(to right, #ffffff 50%, #444444 50%);
+  line-height: 1.6;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to right, #fff 50%, #252525 50%);
   background-size: 200% 100%;
   background-position-x: 100%;
-
-  -webkit-background-clip: text;
+  color: transparent;
   background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .card-container {
@@ -757,10 +781,6 @@ body.transitioned .top-right-content {
   background-clip: text;
   -webkit-background-clip: text;
   transition: background-position 0.6s ease;
-}
-
-.value-content:hover {
-  background-position-x: 0%;
 }
 
 /* DIVIDER LINES */
@@ -1295,8 +1315,8 @@ body.transitioned .top-right-content {
 /*  */
 
 /* ========== MEDIA QUERIES ========== */
-/* @media (max-width: 1024px) {
-} */
+@media (max-width: 1024px) {
+}
 
 @media (max-width: 675px) {
   body {
@@ -1342,7 +1362,8 @@ body.transitioned .top-right-content {
 
   .menu-icon {
     display: block;
-    top: 0.2em;
+    top: -0.2em;
+    left: 4rem;
     position: absolute;
   }
 
@@ -1392,25 +1413,52 @@ body.transitioned .top-right-content {
   .gradient-line-vertical {
     position: relative;
     width: 12rem;
-    height: 0.4rem;
+    height: 0.2rem;
     background: linear-gradient(to left, rgba(0, 0, 0, 0), #48c9ff);
     margin: 0 auto 1rem auto;
-    left: 0;
+    left: -3rem;
     top: 0;
   }
 
   .about-text h2 {
     font-size: 2rem;
-    margin: 0.5rem 0;
+    margin: 1rem 2rem;
   }
 
   .text-about {
     font-size: 1rem;
     line-height: 1.6;
-    margin: 0;
+    padding: 0 1.2rem;
     max-width: 800px;
   }
 
+  .arrow-btn {
+    position: absolute;
+    bottom: 4rem;
+    right: 1.25rem;
+    width: 6rem;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+  }
+
+  .circle-svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotateText 10s linear infinite;
+  }
+
+  @keyframes rotateText {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
   .section-title {
     font-family: "Audiowide", sans-serif;
     font-size: 2rem;
