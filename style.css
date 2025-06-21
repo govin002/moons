@@ -1252,6 +1252,17 @@ body.transitioned .top-right-content {
   gap: 1.2rem;
 }
 
+.underline-white {
+  border-bottom: 2px solid white;
+  padding-bottom: 2px;
+  color: white;
+  text-decoration: none;
+}
+.underline-white:hover {
+  color: #ddd;
+  border-color: #ddd;
+}
+
 .contact-form input,
 .contact-form textarea {
   width: 100%;
