@@ -1,71 +1,71 @@
+const cardStack = document.getElementById("cardStack");
+const leftBtn = document.getElementById("leftBtn");
+const rightBtn = document.getElementById("rightBtn");
+
 let isAnimating = false;
 
-function popCard(card) {
-  card.classList.remove("pop"); // reset animation
-  void card.offsetWidth; // trigger reflow
-  card.classList.add("pop"); // reapply pop
-}
-function rotateLeft() {
-  if (isAnimating) return;
-  isAnimating = true;
-
-  const stack = document.getElementById("cardStack");
-  const topCard = stack.children[0];
-
-  topCard.classList.add("exit-left");
-
-  setTimeout(() => {
-    stack.appendChild(topCard);
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        topCard.classList.remove("exit-left");
-        updateStack();
-        popCard(stack.children[0]);
-        setTimeout(() => {
-          isAnimating = false;
-        }, 500);
-      });
-    });
-  }, 500); // Wait for the exit animation
-}
-
-function rotateRight() {
-  if (isAnimating) return;
-  isAnimating = true;
-
-  const stack = document.getElementById("cardStack");
-  const bottomCard = stack.children[stack.children.length - 1];
-
-  bottomCard.classList.add("exit-right");
-  stack.insertBefore(bottomCard, stack.children[0]);
-
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      updateStack();
-      bottomCard.classList.remove("exit-right");
-      popCard(stack.children[0]);
-      setTimeout(() => {
-        isAnimating = false;
-      }, 500);
-    });
-  });
-}
-
-function updateStack() {
-  const cards = document.querySelectorAll(".card");
-  const angles = [0, -8, 0, 0];
-
+function updateTilt() {
+  const cards = Array.from(cardStack.children);
   cards.forEach((card, i) => {
-    card.style.zIndex = cards.length - i;
-    card.style.transform = `
-      translateY(${i * 15}px)
-      scale(${1 - i * 0.07})
-      rotate(${angles[i % angles.length]}deg)
-    `;
-    card.style.opacity = 1;
+    card.style.zIndex = 100 - i;
+    card.style.transition = "transform 0.3s ease";
+    card.style.transform = ""; // Reset inline transform so CSS tilt applies
   });
 }
 
-// Initialize
-updateStack();
-popCard(document.getElementById("cardStack").children[0]);
+// Move bottom card to top (from left)
+function moveBottomToTopLeft() {
+  if (isAnimating) return;
+  isAnimating = true;
+
+  const cards = Array.from(cardStack.children);
+  const bottomCard = cards[cards.length - 1];
+
+  cardStack.removeChild(bottomCard);
+  cardStack.insertBefore(bottomCard, cardStack.firstChild);
+
+  gsap.fromTo(
+    bottomCard,
+    { x: -400 },
+    {
+      x: 0,
+      duration: 0.6,
+      ease: "power2.inOut",
+      onComplete: () => {
+        updateTilt();
+        isAnimating = false;
+      },
+    }
+  );
+}
+
+// Move bottom card to top (from right)
+function moveBottomToTopRight() {
+  if (isAnimating) return;
+  isAnimating = true;
+
+  const cards = Array.from(cardStack.children);
+  const bottomCard = cards[cards.length - 1];
+
+  cardStack.removeChild(bottomCard);
+  cardStack.insertBefore(bottomCard, cardStack.firstChild);
+
+  gsap.fromTo(
+    bottomCard,
+    { x: 400 },
+    {
+      x: 0,
+      duration: 0.6,
+      ease: "power2.inOut",
+      onComplete: () => {
+        updateTilt();
+        isAnimating = false;
+      },
+    }
+  );
+}
+
+leftBtn.addEventListener("click", moveBottomToTopLeft);
+rightBtn.addEventListener("click", moveBottomToTopRight);
+
+updateTilt();
