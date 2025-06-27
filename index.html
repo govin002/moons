@@ -489,15 +489,15 @@
     <div class="section-six">
       <h1 class="testimonoals-header">Client Testimonials</h1>
       <div class="section-six-container">
-        <div class="container-cards">
+        <div class="container-cards card-container">
           <div class="left-controls">
-            <button class="btn-aro" onclick="rotateLeft()">
+            <button class="btn-aro"  id="leftBtn" onclick="rotateLeft()">
               <img src="assets/images/larrow.png" alt="Left Arrow" />
             </button>
           </div>
 
-          <div class="card-stack" id="cardStack">
-            <div class="card card-yellow">
+          <div class="card-stack  " id="cardStack">
+            <div class="card  card1 card-yellow">
               <div class="quote-mark">“</div>
               <div class="stars">★★★★★</div>
               <p>
@@ -505,7 +505,7 @@
                 industry...
               </p>
             </div>
-            <div class="card card-blue">
+            <div class="card card2 card-blue">
               <div class="quote-mark">“</div>
               <div class="stars">★★★★★</div>
               <p>
@@ -513,7 +513,7 @@
                 electronic typesetting...
               </p>
             </div>
-            <div class="card card-purple">
+            <div class="card card3 card-purple">
               <div class="quote-mark">“</div>
               <div class="stars">★★★★★</div>
               <p>
@@ -532,13 +532,14 @@
           </div>
 
           <div class="right-controls">
-            <button class="btn-aro" onclick="rotateRight()">
+            <button class="btn-aro" id="rightBtn" onclick="rotateRight()">
               <img src="assets/images/rarrow.png" alt="Right Arrow" />
             </button>
           </div>
         </div>
       </div>
     </div>
+
 
     <!-- section six ends -->
     <!-- section seven starts -->
